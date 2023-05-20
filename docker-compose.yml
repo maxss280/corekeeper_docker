@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  dedicatedserver:
+    image: crashoverridee/corekeeper:latest
+    restart: always
+    volumes:
+      - "config:/root/.config/unity3d/Pugstorm/Core\ Keeper/DedicatedServer/"
+    environment:
+      - GAMEID=CJOiIC86liCucySycYlCiCyjCkl12345
+      - WORLDNAME=YourServersName
+      - MODE=0
+    ports:
+      - "27015-27016:27015-27016/udp"
+    stdin_open: true
+    tty: true
+volumes:
+  config:
